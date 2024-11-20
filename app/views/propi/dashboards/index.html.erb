@@ -1,0 +1,31 @@
+<h1>Dashboard del Propietario</h1>
+
+<h2>Datos del Propietario</h2>
+<ul>
+  <li><strong>Nombre:</strong> <%= @propietario.nombre %></li>
+  <li><strong>Dirección:</strong> <%= @propietario.direccion %></li>
+  <li><strong>Contacto:</strong> <%= @propietario.contacto %></li>
+</ul>
+<%= link_to "Editar datos", propi_edit_dashboard_path, class: "btn btn-primary" %>
+
+
+<h2>Datos del Polideportivo Asociado</h2>
+<% if @polideportivo %>
+  <div class="centered-card polideportivos">
+    <% if @polideportivo.imagen.attached? %>
+      <img src="<%= url_for(@polideportivo.imagen) %>" alt="Imagen del Polideportivo" class="card-image">
+    <% else %>
+      <div class="card-image">No hay imagen disponible</div>
+    <% end %>
+    <div class="card-content">
+      <h2 class="card-title"><%= @polideportivo.nombre %></h2>
+      <p class="card-category">Ubicación: <%= @polideportivo.ubicacion %></p>
+      <p class="card-category">Contacto: <%= @polideportivo.contacto %></p>
+    </div>
+    <div>
+      <%= link_to 'Ver canchas', propi_canchas_path, class: 'button button-secondary' %>
+    </div>
+  </div>
+<% else %>
+  <p>No tienes un polideportivo asociado.</p>
+<% end %>

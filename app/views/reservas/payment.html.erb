@@ -1,0 +1,30 @@
+<%= form_with url: create_payment_reservas_path, method: :post, local: true do |f| %>
+  <!-- Campo Nombre -->
+  <div class="field">
+    <%= f.label :nombre, "Nombre" %>
+    <%= f.text_field :nombre, required: true %>
+  </div>
+
+  <!-- Campo Teléfono -->
+  <div class="field">
+    <%= f.label :phoneNumber, "Teléfono" %>
+    <%= f.text_field :phoneNumber, required: true %>
+  </div>
+
+  <!-- Campo Correo Electrónico -->
+  <div class="field">
+    <%= f.label :email, "Correo Electrónico" %>
+    <%= f.email_field :email, required: true %>
+  </div>
+
+  <!-- Campo OTP -->
+  <div class="field">
+    <%= f.label :otp, "OTP" %>
+    <%= f.text_field :otp, required: true %>
+  </div>
+
+  <!-- Botón de Enviar -->
+  <div class="actions">
+    <%= f.submit "Pagar y Guardar Reserva", class: "button-primary" %>
+  </div>
+<% end %>

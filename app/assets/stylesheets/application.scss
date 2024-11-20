@@ -1,0 +1,83 @@
+// Importa los estilos de componentes
+@import 'variables';
+@import 'components/letra';
+@import 'components/boton';
+@import 'components/cards';
+@import 'components/tablas';
+@import 'components/encabezados';
+@import 'propietario';
+@import 'components/formulario';
+@import "components/sidebar";
+@import "components/calendar";
+
+
+// Añade otros archivos SCSS si tienes más componentes
+
+body, html {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.contenedor-principal {
+  
+  min-height: 100%; // Asegura que ocupe toda la ventana
+  
+  min-width: 100vh;
+  
+
+}
+.contenedor-centro {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  min-height: 100%; // Asegura que ocupe toda la ventana
+  
+  min-width: 100vh;
+  
+
+}
+
+.main-containerprin {
+  background-image: url('https://st3.depositphotos.com/9880800/15061/i/450/depositphotos_150618774-stock-photo-panoramic-view-of-soccer-field.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; // Ocupa el 100% de la altura de la ventana
+    min-width: 100vh;
+    /* Ajusta la altura a tu preferencia */
+  
+}
+.background-div {
+  min-height: 200vh; // Ocupa el 100% de la altura de la ventana
+  background-color: rgba(0, 0, 0, 0.404);
+  min-width: 200vh;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+}
+
+.main-containerpima {
+  background-image: url('https://www.columnadeportiva.com/wp-content/uploads/2022/01/pelota-futbol.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; // Ocupa el 100% de la altura de la ventana
+    min-width: 200vh;
+    /* Ajusta la altura a tu preferencia */
+  
+}
+
+
+
+
+

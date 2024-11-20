@@ -1,0 +1,38 @@
+<h1>Editar Propietario</h1>
+
+<%= form_with(model: [:administrador, @propietario], local: true) do |form| %>
+  <% if @propietario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@propietario.errors.count, "error") %> impidieron actualizar este propietario:</h2>
+      <ul>
+        <% @propietario.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :nombre, class: 'form-label' %>
+    <%= form.text_field :nombre, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :direccion, class: 'form-label' %>
+    <%= form.text_field :direccion, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :contacto, class: 'form-label' %>
+    <%= form.text_field :contacto, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :polideportivo_id, "Polideportivo", class: 'form-label' %>
+    <%= form.collection_select :polideportivo_id, Polideportivo.all, :id, :nombre, prompt: "Selecciona un Polideportivo", class: 'form-select' %>
+  </div>
+
+  <%= form.submit 'Actualizar', class: 'btn btn-primary' %>
+<% end %>
+
+<%= link_to 'Volver', administrador_propietarios_path, class: 'btn btn-secondary' %>

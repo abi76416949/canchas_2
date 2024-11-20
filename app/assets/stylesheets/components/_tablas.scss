@@ -1,0 +1,27 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1em;
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #032F30; // Borde reemplazado
+  }
+  
+  .table th {
+    background-color: #0C969C; // Fondo del encabezado reemplazado
+    color: #fff; // Texto del encabezado en blanco para mayor contraste
+    font-weight: bold;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #6BA3BE; // Fondo al pasar el cursor reemplazado
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #0A7075; // Fondo de las filas pares reemplazado
+  }
+  

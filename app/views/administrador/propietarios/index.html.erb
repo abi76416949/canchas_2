@@ -1,0 +1,27 @@
+<h1>Lista de Propietarios</h1>
+
+<%= link_to 'Nuevo Propietario', new_administrador_propietario_path, class: 'btn btn-primary' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Contacto</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @propietarios.each do |propietario| %>
+      <tr>
+        <td><%= propietario.nombre %></td>
+        <td><%= propietario.direccion %></td>
+        <td><%= propietario.contacto %></td>
+        <td>
+          <%= link_to 'Editar', edit_administrador_propietario_path(propietario), class: 'btn btn-warning' %>
+          <%= link_to 'Eliminar', administrador_propietario_path(propietario), method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

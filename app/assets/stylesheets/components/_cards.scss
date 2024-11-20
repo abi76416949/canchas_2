@@ -1,0 +1,250 @@
+.centered-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 35px;
+  margin-top: 25px;
+  min-height: 10px; // Altura mínima para centrar verticalmente
+  min-width: 30px;
+  max-width: 200vh; // Ancho máximo de la tarjeta
+  
+  background-color: #00000000; // Fondo de la tarjeta reemplazado
+
+  .libre{
+
+    max-width:70%;
+    }
+  .centered-card {
+  
+    max-width: 700px; // Ancho máximo de la tarjeta
+    min-width: 300px; // Ancho mínimo de la tarjeta
+    width: 100%;
+    background-color: $white; // Fondo de la tarjeta de nuevo polideportivo
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    flex-direction: column; // Disposición vertical
+    margin-left: auto; // Centrar el div horizontalmente
+    margin-right: auto; // Centrar el div horizontalmente
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+    
+    &.polideportivo{
+      min-width: 100px;
+      margin: 10px;
+      padding: 0px;
+
+      } // Ancho máximo de la tarjeta
+    &.polideportivoEdit{
+        min-width: 500px;
+        } //
+    &.login
+    {
+      justify-content: center;
+      min-width: 400px;
+      min-height: 500px; 
+      background-color:#6ba2beb9; 
+      color: #fbfbfb;
+    }
+  
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+    
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d9e6;
+    background-color: #f7f9fc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 5px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Efecto al enfocar los campos */
+  .input-field:focus {
+    outline: none;
+    border-color: #0A7075;
+    background-color: #eaf4f8;
+  }
+  
+
+}
+
+.card-image { // estilo de la imagen de cada tarjeta
+  width: 100%;
+  height: 248px;
+  object-fit: cover;
+  border-radius: 15px; /* Añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para resaltar */
+}
+
+.card-content {
+  padding: 5px;
+}
+
+.card-title {
+  font-size: 1.8em;
+  margin: 10px 0;
+  color: $azul_cobriso; // Color del título reemplazado
+}
+
+.card-category {
+  color: #6ba3be; // Color de la categoría reemplazado
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+
+
+// Estilo para una tarjeta centrada en la página
+
+// Centrar el título de la lista de polideportivos
+.center-title {
+  text-align: center; // Centrar horizontalmente
+  font-size: 2.5em; // Tamaño de fuente
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: auto; // Centrar el div horizontalmente
+  margin-right: auto; // Centrar el div horizontalmente
+  color:#ffffff; // Ajusta el color según tu preferencia
+  display: flex;
+  justify-content: center; // Centrar el contenido si es un elemento flex
+  &.negro{
+    color:#000000
+  }
+
+}
+.polideportivos-grid {
+  display: grid;
+  max-width: 95%; // Limita el ancho para un máximo de 4 columnas
+  width: 100%; // Ancho total del contenedor
+  gap: 20px; // Espacio entre columnas y filas
+  grid-template-columns: repeat(3, minmax(250px, 400px)); // Ajuste automático de columnas
+
+  padding: 40px; // Espaciado interno del contenedor
+  border-radius: 8px;
+  background-color: #04040400 ;// Fondo del contenedor
+  margin: 20px auto; // Margen de 10px alrededor y centrado horizontalmente
+  justify-content: center; // Centrado de las tarjetas en el contenedor
+  align-items: center; // Alineación vertical de las tarjetas en el contenedor
+
+&.admi{
+  grid-template-columns: repeat(2, minmax(100px, 400px)); // Ajuste automático de columnas
+  width: 200vh;
+  padding: 0px; // Espaciado interno del contenedor
+
+}
+}
+.grid{
+  display: grid;
+  width: 100%; // Ancho total del contenedor
+  height: 100vh;;
+  gap: 20px; // Espacio entre columnas y filas
+  grid-template-columns: repeat(2, minmax(250px, 400px)); // Ajuste automático de columnas
+  border-radius: 8px;
+  
+
+}
+
+
+//tarjeta de informacion
+
+.info-container-card {
+  position: absolute; // Mantiene el div fijo en su lugar
+  top: 130px; // Ajusta esta distancia según la altura de tu encabezado
+  right: 20px; // Margen desde el borde derecho
+  background-color: $azul_cobriso; // Fondo semitransparente (ajustable)
+  color: #ffffff; // Texto blanco para mejor contraste
+  padding: 15px; // Espaciado interno
+  border-radius: 8px; // Bordes redondeados
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Sombra para efecto de elevación
+  max-width: 300px; // Ancho máximo del contenedor
+  
+}
+
+// estilo de la tarjeta de chanchas
+.card-container {
+  padding: 10px; // Espaciado interno para las tarjetas
+  
+}
+// Estilo de la tarjeta de chanchas una 
+.centered-cardd-poli {
+  max-width: 250px; // Ancho máximo de la tarjeta
+  width: 100%;
+  
+  background-color: $white; // Fondo de la tarjeta
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; // Disposición vertical del contenido
+  align-items: center;
+  text-align: center;
+  padding: 20px; // Espaciado interno de la tarjeta
+  margin: auto; // Centrado en el contenedor
+  margin: auto; // Centrado en el contenedor
+
+  margin-bottom: 30px; // Centrado en el contenedor
+
+}
+
+//boton para agrgar canchas
+.centered-cardd-canchas {
+  max-width: 250px; // Ancho máximo de la tarjeta
+  width: 100%;
+  
+  background-color: $white; // Fondo de la tarjeta
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; // Disposición vertical del contenido
+  align-items: center;
+  text-align: center;
+  padding: 20px; // Espaciado interno de la tarjeta
+  margin: auto; // Centrado en el contenedor
+  margin: auto; // Centrado en el contenedor
+ 
+  margin-bottom: 30px; // Centrado en el contenedor
+
+}
+
+
+.container-column{
+  min-width: 100vh;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .polideportivos-grid {
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    gap: 10px; /* Espacio reducido entre elementos */
+    padding: 20px; /* Reduce el espaciado interno */
+  }
+
+  .polideportivos-grid.admi {
+    grid-template-columns: 1fr; /* También aplica a la versión "admi" */
+    width: 100%;
+  }
+}

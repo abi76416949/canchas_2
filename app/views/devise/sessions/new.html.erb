@@ -1,0 +1,27 @@
+
+<div class="main-containerprin">
+    <div class="background-div">
+    <div class = "centered-card-container">
+    <div class="centered-card login">
+    <h2 class="form-label login">Iniciar Sesión</h2>
+
+    <%= form_with url: user_session_path, scope: :user, local: true do |f| %>
+      <div class="form-field field">
+        <%= f.label :email, class: "form-label login" %>
+        <%= f.email_field :email, required: true, class: "form-input" %>
+      </div>
+
+      <div class="form-field field">
+        <%= f.label :password, class: "form-label login" %>
+        <%= f.password_field :password, required: true, class: "form-input" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit 'Iniciar Sesión', class: "button button-secondary" %>
+      </div>
+    <% end %>
+    </div>
+    </div>
+    </div>
+     </div>
+

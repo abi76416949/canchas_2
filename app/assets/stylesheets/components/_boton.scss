@@ -1,0 +1,84 @@
+.button {
+  display: inline-block;
+  padding: 0.5em 1em; // Ajusta el margen superior/inferior y los laterales
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap; // Evita que el botón se divida en varias líneas
+  margin: 5px; // Ajusta el margen entre los botones
+  
+  // Estilos de enfoque y clic
+  outline: none; /* Elimina el borde por defecto del navegador al hacer clic */
+  
+  &:focus {
+    outline: none; /* Elimina el borde de enfoque */
+    box-shadow: none; /* Elimina la sombra de enfoque */
+  }
+
+  &:active {
+    background-color: initial; /* Mantiene el color original */
+    color: initial; /* Mantiene el color del texto original */
+  }
+  
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+// Estilos para un botón primario
+.button-primary {
+  background-color: $background-color; // Color reemplazado
+  color: #fff;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: #0A7075; // Color reemplazado
+  }
+}
+
+// Estilos para un botón secundario
+.button-secondary {
+  background-color: #6BA3BE; // Color reemplazado
+  color: #fff;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: #fff;
+    background-color: #032F30; // Color reemplazado
+  }
+}
+
+.button-encabezado {
+  background-color: $color-verde-oscuro; // Color reemplazado
+  color: #fff;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: $success-color; // Color reemplazado
+  }
+}
+
+// Estilos para un botón de advertencia
+.button-danger {
+  background-color: #4dcdc7; // Color reemplazado
+  color: #fff;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: #274D60; // Color reemplazado
+  }
+}
+
+.button-inicio {
+  size: 1em;
+  background-color: $color-verde-oscuro; // Color reemplazado
+  color: #fff;
+  border: 1px solid transparent;
+
+  &:hover {
+    background-color: #032F30; // Color reemplazado
+  }
+}

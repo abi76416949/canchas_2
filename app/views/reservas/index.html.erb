@@ -1,0 +1,42 @@
+<table class="calendar-table">
+    <thead>
+        <tr>
+            <th>Hora</th>
+            <% 7.times do |day| %>
+            <th><%= (Date.today + day.days).strftime("%A %d/%m/%Y") %></th>
+            <% end %>
+        </tr>
+    </thead>
+    <tbody>
+        <% (12..23).each do |hour| %>
+        <tr>
+            <td class="time-slot"><%= "#{hour}:00" %></td>
+            <% 7.times do |day| %>
+            <% current_date = Date.today + day.days %>
+            <% hora_inicio = "#{hour-1}:00" %>
+            <% hora_fin = "#{hour}:00" %>
+
+            <td class="time-slot">
+                <% reserva_existente = @reservas.find_by(
+                fecha: current_date,
+                hora_inicio: Time.parse(hora_inicio) + 5.hours,
+                hora_fin: Time.parse(hora_fin) + 5.hours
+              ) %>
+
+                <% if current_date >= Date.today %>
+                <% if reserva_existente %>
+                <span class="reservedos">
+                    Reservado
+                </span>
+                <% else %>
+                <%= link_to '', new_polideportivo_cancha_reserva_path(@polideportivo, @cancha, reserva: { fecha: current_date, hora_inicio: hora_inicio, hora_fin: hora_fin }), class: 'reserve-link' %>
+                <% end %>
+                <% else %>
+                <span class="disabled-slot">No disponible</span>
+                <% end %>
+            </td>
+            <% end %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

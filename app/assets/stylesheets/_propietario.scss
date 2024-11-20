@@ -1,0 +1,32 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+  }
+  
+  .new-propietario-btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .new-propietario-btn {
+    background-color: #0C969C;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .new-propietario-btn:hover {
+    background-color: #087a7f;
+  }
+  

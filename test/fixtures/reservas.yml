@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  telefono: MyString
+  email: MyString
+  cancha: one
+  fecha: 2024-11-15
+  hora_inicio: 2024-11-15 16:16:28
+  hora_fin: 2024-11-15 16:16:28
+
+two:
+  nombre: MyString
+  telefono: MyString
+  email: MyString
+  cancha: two
+  fecha: 2024-11-15
+  hora_inicio: 2024-11-15 16:16:28
+  hora_fin: 2024-11-15 16:16:28

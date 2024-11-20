@@ -1,0 +1,55 @@
+<div class="centered-card-container">
+    <div class="centered-card">
+        <h1 class="center-title">Nueva Cancha</h1>
+        <%= form_with model: [@polideportivo, @cancha], url: administrador_polideportivo_canchas_path(@polideportivo), local: true, html: { multipart: true } do |f| %>
+
+        <!-- Campo para el nombre -->
+        <div class="form-group field">
+            <%= f.label :nombre, "Nombre", class: "form-label" %>
+            <%= f.text_field :nombre, class: "form-input" %>
+        </div>
+
+        <!-- Campo para la descripción -->
+        <div class="form-group field">
+            <%= f.label :descripcion, "Descripción", class: "form-label" %>
+            <%= f.text_area :descripcion, class: "form-input form-textarea" %>
+        </div>
+
+        <!-- Campo para el precio por día -->
+        <div class="form-group field">
+            <%= f.label :precio_dia, "Precio por Día", class: "form-label" %>
+            <%= f.number_field :precio_dia, class: "form-input" %>
+        </div>
+
+        <!-- Campo para el precio por noche -->
+        <div class="form-group field">
+            <%= f.label :precio_noche, "Precio por Noche", class: "form-label" %>
+            <%= f.number_field :precio_noche, class: "form-input" %>
+        </div>
+
+        <!-- Campo para seleccionar el tipo de cancha -->
+        <div class="form-group field">
+            <%= f.label :tipo, "Tipo de Cancha", class: "form-label" %>
+            <div class="checkbox-group">
+                <% Cancha::TIPOS_CANCHA.each do |tipo| %>
+                <div class="checkbox-item">
+                    <%= check_box_tag 'cancha[tipo][]', tipo, @cancha.tipo&.include?(tipo), id: tipo %>
+                    <%= label_tag tipo, tipo, class: "form-label-inline" %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+
+        <!-- Campo para subir la imagen -->
+        <div class="form-group field">
+            <%= f.label :imagen, "Subir Imagen", class: "form-label" %>
+            <%= f.file_field :imagen, class: "form-input" %>
+        </div>
+
+        <!-- Botón de submit -->
+        <div class="actions">
+            <%= f.submit "Crear Cancha", class: "btn btn-primary form-input" %>
+        </div>
+        <% end %>
+    </div>
+</div>

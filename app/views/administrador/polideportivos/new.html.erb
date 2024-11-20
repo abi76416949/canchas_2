@@ -1,0 +1,27 @@
+<h1>Nuevo Polideportivo</h1>
+
+<%= form_with model: [:administrador, @polideportivo], local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :nombre, "Nombre" %>
+    <%= f.text_field :nombre, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ubicacion, "Ubicación" %>
+    <%= f.text_field :ubicacion, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :contacto, "Contacto" %>
+    <%= f.text_field :contacto, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :imagen, "Subir Imagen" %>
+    <%= f.file_field :imagen, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Crear Polideportivo', class: 'btn btn-primary' %>
+  </div>
+<% end %>

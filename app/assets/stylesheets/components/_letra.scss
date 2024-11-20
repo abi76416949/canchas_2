@@ -1,0 +1,69 @@
+@import '../variables';
+// Estilos para el encabezado
+.header {
+  background-color: #0A707550; // Fondo del encabezado reemplazado
+  color: rgba(255, 255, 255, 0.4); // Ajustado para mejor contraste
+  padding: 20px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #011819; // Color del título reemplazado
+  }
+
+  .nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  .nav-link {
+    color: #6BA3BE; // Color de los enlaces de navegación reemplazado
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #032F30; // Color al pasar el cursor reemplazado
+    }
+  }
+}
+
+// Estilos para el contenido principal
+.main-content {
+  padding: 20px;
+  color: #274D60; // Color del texto principal reemplazado
+  width: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+// Estilos para el pie de página
+.footer {
+  background-color: #031716; // Fondo del pie de página reemplazado
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+
+  .footer-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-link {
+    color: #6BA3BE; // Color de los enlaces del pie de página reemplazado
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0C969C; // Color al pasar el cursor reemplazado
+    }
+  }
+}

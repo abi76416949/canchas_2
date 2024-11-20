@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>canchasGO!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/c1cf5b6134.js" crossorigin="anonymous"></script>
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+        <meta name="mercadopago-public-key" content="<%= ENV['MERCADOPAGO_PUBLIC_KEY'] %>">
+
+
+
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="<%= polideportivos_path %>" class="header-title-link">
+            <h1 class="header-title">
+                CANCHAS<span class="highlight">G<i class="fa-solid fa-futbol"></i></span>
+            </h1>
+        </a>
+
+        <nav class="nav">
+            <% if user_signed_in? %>
+            <!-- Mostrar el nombre de usuario o un enlace al perfil si está autenticado -->
+            <%= link_to "Cerrar Sesión", destroy_user_session_path, class: "button activate button-secondary nav-link", method: :delete, data: { confirm: "¿Estás seguro de que quieres cerrar sesión?" } %>
+            <% else %>
+            <!-- Mostrar el botón de iniciar sesión si no está autenticado -->
+            <%= link_to "Iniciar Sesión", new_user_session_path, class: "button activate button-secondary nav-link" %>
+            <% end %>
+            <!-- Botón para abrir el menú lateral -->
+             <button class="button button-secondary" onclick="toggleSidebar()">☰ Menú</button>
+
+             <!-- Menú lateral -->
+             <div id="sidebar" class="sidebar">
+               <a href="javascript:void(0)" onclick="toggleSidebar()">Cerrar ×</a>
+               <a href="<%= polideportivos_path %>">Home</a>
+               <a href="<%= administrador_polideportivos_path %>">Polideportivos</a>
+               <a href="#">Acerca de</a>
+               <a href="#">Contáctenos</a>
+               <% if user_signed_in? %>
+                 <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que quieres cerrar sesión?" }, class: "sidebar-link" %>
+               <% end %>
+             </div>
+
+        </nav>
+    </header>
+<div class="contenedor-principal">
+
+    <%= yield %>
+
+</div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 CANCHAS GO! Todos los derechos reservados.</p>
+            <div class="footer-nav">
+                <a href="#about" class="footer-link">Acerca de</a>
+                <a href="#contact" class="footer-link">Contacto</a>
+                <a href="#privacy" class="footer-link">Política de Privacidad</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var mainContent = document.getElementById("mainContent");
+
+        if (sidebar.style.left === "-250px") {
+            sidebar.style.left = "0";
+            mainContent.style.marginLeft = "250px";
+        } else {
+            sidebar.style.left = "-250px";
+            mainContent.style.marginLeft = "20px";
+        }
+    }
+</script>

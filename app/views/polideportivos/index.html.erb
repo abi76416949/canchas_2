@@ -1,0 +1,33 @@
+<div class="main-containerpima">
+    <div class="background-div">
+
+        <div class="container-column">
+            <h1 class="center-title">LISTA DE POLIDEPORTIVOS</h1>
+            <div class="polideportivos-grid">
+                <% @polideportivos.each do |polideportivo| %>
+                <div class="centered-card-container">
+                    <div class="centered-card polideportivos">
+                        <% if polideportivo.imagen.attached? %>
+                        <img src="<%= url_for(polideportivo.imagen) %>" alt="Imagen del Polideportivo" class="card-image">
+                        <% else %>
+                        <div class="card-image">
+                            No hay imagen disponible
+                        </div>
+                        <% end %>
+
+                        <div class="card-content">
+                            <h2 class="card-title"><%= polideportivo.nombre %></h2>
+                            <p class="card-category">Ubicación: <%= polideportivo.ubicacion %></p>
+                            <p class="card-category">Contacto: <%= polideportivo.contacto %></p>
+                        </div>
+                        <div>
+                            <%= link_to 'Ver Canchas', polideportivo_canchas_path(polideportivo), class: 'button button-secondary' %>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+
+    </div>
+</div>

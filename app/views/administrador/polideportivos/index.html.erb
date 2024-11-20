@@ -1,0 +1,36 @@
+<h1 class="center-title">LISTA DE POLIDEPORTIVOS</h1>
+
+<div class="button-container">
+    <%= link_to 'Nuevo Polideportivo', new_administrador_polideportivo_path, class: 'button button-primary' %>
+</div>
+
+<div class="polideportivos-grid">
+    <% @polideportivos.each do |polideportivo| %>
+    <div class="centered-card-container">
+        <div class="centered-card">
+            <% if polideportivo.imagen.attached? %>
+            <img src="<%= url_for(polideportivo.imagen) %>" alt="Imagen del Polideportivo" class="card-image">
+            <% else %>
+            <div class="card-image">
+                No hay imagen disponible
+            </div>
+            <% end %>
+
+            <div class="card-content">
+                <h2 class="card-title"><%= polideportivo.nombre %></h2>
+                <p class="card-category">Ubicación: <%= polideportivo.ubicacion %></p>
+                <p class="card-category">Contacto: <%= polideportivo.contacto %></p>
+            </div>
+
+            <div class="button-container">
+                <%= link_to 'Editar', edit_administrador_polideportivo_path(polideportivo), class: 'button button-secondary' %>
+                <%= link_to 'Eliminar', administrador_polideportivo_path(polideportivo),
+                        method: :delete,
+                        data: { confirm: '¿Estás seguro de eliminar este polideportivo?' },
+                        class: 'button button-danger' %>
+                <%= link_to 'Ver Canchas', administrador_polideportivo_canchas_path(polideportivo), class: 'button button-primary' %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>

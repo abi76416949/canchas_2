@@ -1,0 +1,40 @@
+<div class="contenedor-centro">
+  <div class="centered-card-container">
+    <div class="centered-card polideportivoEdit">
+      <h1 class="center-title">Editar Polideportivo</h1>
+
+      <%= form_with(model: @polideportivo, url: propi_polideportivo_path(@polideportivo), method: :patch, local: true, html: { multipart: true }) do |f| %>
+        <div class="form-group field">
+          <%= f.label :nombre, "Nombre", class: "form-label" %>
+          <%= f.text_field :nombre, class: "form-input" %>
+        </div>
+
+        <div class="form-group field">
+          <%= f.label :ubicacion, "Ubicación", class: "form-label" %>
+          <%= f.text_field :ubicacion, class: "form-input" %>
+        </div>
+
+        <div class="form-group field">
+          <%= f.label :contacto, "Contacto", class: "form-label" %>
+          <%= f.text_field :contacto, class: "form-input" %>
+        </div>
+
+        <div class="form-group field">
+          <%= f.label :imagen, "Actualizar Imagen", class: "form-label" %>
+          <%= f.file_field :imagen, class: "form-input-file" %>
+          <% if @polideportivo.imagen.attached? %>
+            <img src="<%= url_for(@polideportivo.imagen) %>" alt="Imagen del Polideportivo" class="card-image">
+            <% else %>
+            <div class="card-image">
+                No hay imagen disponible
+            </div>
+            <% end %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit 'Actualizar Polideportivo', class: 'btn btn-success button button-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

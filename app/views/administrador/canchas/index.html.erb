@@ -1,0 +1,52 @@
+<div class="contenedor-centro">
+    <div class="centered-card-container">
+        <div class="container-column">
+            <h1 class="center-title negro">Canchas del Polideportivo <%= @polideportivo.nombre %></h1>
+
+            <div class="button-container">
+                <%= link_to 'Nueva Cancha', new_administrador_polideportivo_cancha_path(@polideportivo), class: 'button button-primary' %>
+            </div>
+
+            <div class="polideportivos-grid">
+                <% if @canchas.present? %>
+                <% @canchas.each do |cancha| %>
+                <div class="centered-card-container">
+                    <div class="centered-card polideportivos">
+                        <div class="card-content">
+                            <h2 class="card-title"><%= cancha.nombre %></h2>
+                            <p class="card-category">Precio por Día: S/. <%= cancha.precio_dia %></p>
+                            <p class="card-category">Precio por Noche: S/. <%= cancha.precio_noche %></p>
+
+                            <% if cancha.imagen.attached? %>
+                            <img src="<%= url_for(cancha.imagen) %>" alt="Imagen del Cancha" class="card-image">
+                            <% else %>
+                            <div class="card-image">
+                                No hay imagen disponible
+                            </div>
+                            <% end %>
+
+                            <div class="button-container">
+                                <%= link_to 'Editar', edit_administrador_polideportivo_cancha_path(@polideportivo, cancha), class: 'button button-primary' %>
+                                <%= link_to 'Eliminar', administrador_polideportivo_cancha_path(@polideportivo, cancha),
+                                            method: :delete,
+                                            data: { confirm: '¿Estás seguro de que quieres eliminar esta cancha?' },
+                                            class: 'button button-danger' %>
+                                <%= link_to 'Ver Reservas', administrador_polideportivo_cancha_reservas_path(@polideportivo, cancha), class: 'button button-secondary' %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+                <% else %>
+                <div class="centered-card-container">
+                    <div class="centered-card polideportivos">
+                        <div class="card-content">
+                            <p>No hay canchas registradas.</p>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

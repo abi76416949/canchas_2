@@ -1,0 +1,54 @@
+<%= form_with model: [@polideportivo, @cancha, @reserva], url: create_payment_reservas_path, method: :post, local: true do |f| %>
+<!-- Campo Nombre -->
+<div class="field form-field">
+    <%= f.label :nombre, "Nombre", class: "form-label" %>
+    <%= f.text_field :nombre, class: "form-input", required: true %>
+</div>
+
+<!-- Campo Teléfono -->
+<div class="field form-field">
+    <%= f.label :telefono, "Teléfono", class: "form-label" %>
+    <%= f.text_field :telefono, class: "form-input", required: true %>
+</div>
+
+<!-- Campo Correo Electrónico -->
+<div class="field form-field">
+    <%= f.label :email, "Correo Electrónico", class: "form-label" %>
+    <%= f.email_field :email, class: "form-input", required: true %>
+</div>
+
+<!-- Campo Fecha de la Reserva -->
+<div class="field form-field">
+    <%= f.label :fecha, "Fecha de la Reserva", class: "form-label" %>
+    <%= f.date_field :fecha, value: @reserva.fecha || Date.today, class: "form-input", required: true %>
+</div>
+
+<!-- Campo Hora de Inicio -->
+<div class="field form-field">
+    <%= f.label :hora_inicio, "Hora de Inicio", class: "form-label" %>
+    <%= f.time_field :hora_inicio, value: (@reserva.hora_inicio + 5.hours)&.strftime("%H:%M"), class: "form-input", required: true %>
+</div>
+
+<!-- Campo Hora de Fin -->
+<div class="field form-field">
+    <%= f.label :hora_fin, "Hora de Fin", class: "form-label" %>
+    <%= f.time_field :hora_fin, value: (@reserva.hora_fin + 5.hours)&.strftime("%H:%M"), class: "form-input", required: true %>
+</div>
+
+<!-- Campo Número de Celular -->
+<div class="field form-field">
+    <%= f.label :phoneNumber, "Número de Celular", class: "form-label" %>
+    <%= f.text_field :phoneNumber, class: "form-input", required: true %>
+</div>
+
+<!-- Campo OTP -->
+<div class="field form-field">
+    <%= f.label :otp, "OTP", class: "form-label" %>
+    <%= f.text_field :otp, class: "form-input", required: true %>
+</div>
+
+<!-- Botón de Pago -->
+<div class="actions">
+    <%= f.submit "Pagar y Guardar Reserva", class: "button button-primary" %>
+</div>
+<% end %>

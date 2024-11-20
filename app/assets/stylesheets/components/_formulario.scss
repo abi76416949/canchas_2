@@ -1,0 +1,85 @@
+    /* Ajustes generales para los campos del formulario */
+    .form-field {
+        margin-bottom: 4px; /* Reduce el espacio entre campos */
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-input-file {
+        width: 100%;
+        padding: 8px; /* Reduce el padding para un diseño más compacto */
+        margin-bottom: 12px;
+        background-color: #e0e0e0; /* Color plomo que combina bien con verde */
+        border: 1px solid #b0b0b0; /* Bordes ligeramente más oscuros */
+        border-radius: 6px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    /* Efecto al enfocar en los campos */
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-input-file:focus {
+        border-color: #90A955; /* Verde suave para el borde al enfocarse */
+        outline: none;
+        box-shadow: 0 0 4px rgba(144, 169, 85, 0.4); /* Suave resplandor verde */
+    }
+    
+    .form-textarea {
+        height: 80px; /* Tamaño más compacto para el textarea */
+        resize: vertical;
+    }
+    
+    /* Estilos para las etiquetas */
+    .form-label {// para areglar el contenido y las preuntas 
+        font-weight: bold;
+        margin-bottom: 7px;
+        display: block;
+        color: #000000; /* Color plomo oscuro para el texto */
+        text-align: left; /* Alinea el texto a la izquierda */
+        &.login{
+            color: #ffffff;
+        }
+    }
+    
+    /* Ajustes para los campos individuales */
+    .field {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinea las etiquetas y campos a la izquierda */
+    }
+    
+    /* Botón de acción centrado */
+    .actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .admin-link {
+        color: #000000; /* Color que combina con tu diseño actual */
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: color 0.3s ease;
+    }
+    
+    .admin-link:hover {
+        color: #90A955; /* Cambia el color al pasar el cursor */
+        text-decoration: underline;
+    }
+    .checkbox-group {
+        display: flex;
+        flex-direction: column; /* Coloca los elementos uno debajo del otro */
+      
+        .checkbox-item {
+          display: flex;
+          align-items: center; /* Alinea el checkbox y el label verticalmente */
+          margin-bottom: 5px; /* Espacio entre cada opción */
+        }
+      
+        .form-label-inline {
+          margin-left: 5px; /* Espacio entre el checkbox y el label */
+        }
+      }
+      

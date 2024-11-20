@@ -1,0 +1,88 @@
+<div class="main-containerpima ">
+    <!-- Menú lateral -->
+    <div class="grid">
+        <div class="sidebar-fija">
+            <a href="#">Dashboard</a>
+            <a href="<%= administrador_polideportivos_path %>">Polideportivos</a>
+            <a href="#">Propietarios</a>
+            <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que quieres cerrar sesión?" }, class: "sidebar-link" %>
+        </div>
+
+        <div class="container-column">
+            <!-- Contenido principal -->
+            <h1 class=" center-title negro">BIENVENIDO ADMINISTRADOR</h1>
+
+            <div class="centered-card-container">
+
+                <div class="polideportivos-grid admi">
+                    <!-- Tarjeta de Polideportivos -->
+                    <div class="centered-card polideportivo">
+                        <ul class="card-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>POLIDEPORTIVOS</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if @polideportivos.present? %>
+                                    <% @polideportivos.each do |polideportivo| %>
+                                    <tr>
+                                        <td><%= polideportivo.nombre %></td>
+
+                                    </tr>
+                                    <% end %>
+                                    <% else %>
+                                    <tr>
+                                        <td colspan="1">No hay polideportivos registrados.</td>
+                                    </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+
+                        </ul>
+
+                        <%= link_to "Ver Polideportivos", administrador_polideportivos_path, class: "button button-secondary" %>
+
+                    </div>
+
+                    <!-- Tarjeta de Propietarios -->
+                    <div class="centered-card polideportivo">
+                        <h2 class="card-title">Propietarios</h2>
+                        <ul class="card-content">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Dirección</th>
+                                        <th>Contacto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if @propietarios.present? %>
+                                    <% @propietarios.each do |propietario| %>
+                                    <tr>
+                                        <td><%= propietario.nombre %></td>
+                                        <td><%= propietario.direccion %></td>
+                                        <td><%= propietario.contacto %></td>
+                                    </tr>
+                                    <% end %>
+                                    <% else %>
+                                    <tr>
+                                        <td colspan="4">No hay propietarios registrados.</td>
+                                    </tr>
+                                    <% end %>
+                                </tbody>
+                            </table>
+                        </ul>
+
+
+                        <%= link_to "Ver propietarios", administrador_propietarios_path, class: "button button-secondary" %>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<h1>Información del Polideportivo</h1>
+
+<% if @polideportivo %>
+  <div class="centered-card polideportivos">
+    <% if @polideportivo.imagen.attached? %>
+      <img src="<%= url_for(@polideportivo.imagen) %>" alt="Imagen del Polideportivo" class="card-image">
+    <% else %>
+      <div class="card-image">No hay imagen disponible</div>
+    <% end %>
+    <div class="card-content">
+      <h2 class="card-title"><%= @polideportivo.nombre %></h2>
+      <p><strong>Ubicación:</strong> <%= @polideportivo.ubicacion %></p>
+      <p><strong>Contacto:</strong> <%= @polideportivo.contacto %></p>
+    </div>
+    <div class="button-container">
+      <%= link_to 'Ver Canchas del Polideportivo', propi_polideportivo_canchas_path(@polideportivo), class: 'btn btn-primary' %>
+      <%= link_to 'Editar Polideportivo', edit_propi_polideportivo_path(@polideportivo), class: 'btn btn-secondary' %>
+    </div>
+  </div>
+<% else %>
+  <p>No tienes un polideportivo asociado.</p>
+<% end %>

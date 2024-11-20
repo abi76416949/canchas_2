@@ -1,0 +1,25 @@
+// Colores principales
+$primary-color: #4F772D;        // Color primario actualizado
+$azul_cobriso: #31572c;         // Color secundario actualizado
+$success-color: #90A955;        // Color de éxito actualizado
+$color-verde-oscuro: #132A13;   // Color de peligro actualizado
+$warning-color: #ECF39E;        // Color de advertencia actualizado
+$info-color: #4F772D;           // Color de información actualizado
+$oscuro: #031716;
+$celeste: #6BA3BE;
+// Colores de fondo
+$background-color: #90A955;     // Fondo general actualizado
+$white: #ffffff;                // Blanco (sin cambios)
+$dark-color: #132A13;           // Fondo oscuro actualizado
+
+// Colores de texto
+$text-color: #31572C;           // Color del texto principal actualizado
+$text-muted-color: #ECF39E;     // Color del texto secundario reemplazado
+$background-gradient: linear-gradient(
+    to bottom, 
+    #ECF39E, 
+    #90A955,
+    #4F772D,
+    #31572C,
+    #132A13,
+  );          // Color degradado reemplazado

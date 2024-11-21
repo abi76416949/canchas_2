@@ -26,7 +26,7 @@ module Administrador
     # GET /administrador/polideportivos/:id/edit
     def edit
     end
-S
+
     # PATCH/PUT /administrador/polideportivos/:id
     def update
       if @polideportivo.update(polideportivo_params)

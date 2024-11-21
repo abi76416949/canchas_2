@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, skip: [:sessions], controllers: { registrations: 'registrations' }
 
 #RUTAS PARA DEVISE
   devise_for :users, skip: [:sessions]
@@ -41,12 +42,6 @@ namespace :propi do
 end
 
 
-#DEFINIMOS LA COLECCION PARA EL PAGO
-  resources :reservas, only: [:index, :new, :create] do
-    collection do
-      post :create_payment
-    end
-  end
 
     resources :polideportivos do
       resources :canchas do

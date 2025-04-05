@@ -55,9 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_15_161627) do
     t.float "precio_dia"
     t.float "precio_noche"
     t.bigint "polideportivo_id", null: false
+    t.text "tipo", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "tipo", array: true
     t.index ["polideportivo_id"], name: "index_canchas_on_polideportivo_id"
   end
 
@@ -73,10 +73,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_15_161627) do
     t.string "nombre"
     t.string "direccion"
     t.string "contacto"
-    t.bigint "polideportivo_id", null: false
+    t.bigint "polideportivos_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["polideportivo_id"], name: "index_propietarios_on_polideportivo_id"
+    t.index ["polideportivos_id"], name: "index_propietarios_on_polideportivos_id"
   end
 
   create_table "reservas", force: :cascade do |t|
@@ -110,6 +110,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_15_161627) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "canchas", "polideportivos"
-  add_foreign_key "propietarios", "polideportivos"
+  add_foreign_key "propietarios", "polideportivos", column: "polideportivos_id"
   add_foreign_key "reservas", "canchas", on_delete: :cascade
 end

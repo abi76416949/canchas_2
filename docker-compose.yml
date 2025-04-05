@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  db:
+    image: postgres
+    container_name: postdb
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - red
+
+  web:
+    build: .
+    container_name: myrailsapp
+    command: bash -c "bundle install && rails db:create db:migrate && rails server -b 0.0.0.0"
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - red
+
+volumes:
+  postgres_data:
+
+networks:
+  red:
+    driver: bridge

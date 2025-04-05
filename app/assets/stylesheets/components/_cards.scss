@@ -230,11 +230,12 @@
 
 
 .container-column{
-  min-width: 100vh;
-  padding: 20px;
+ 
+  max-width: 100vh;
+  padding-bottom: 20px;
   border-radius: 8px;
   text-align: center;
-  width: 100%;
+  min-height: 100vh;
 }
 @media (max-width: 768px) {
   .polideportivos-grid {

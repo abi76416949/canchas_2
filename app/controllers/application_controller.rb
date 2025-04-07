@@ -6,9 +6,10 @@ class ApplicationController < ActionController::Base
     protected
     def after_sign_in_path_for(resource)
           puts "Tipo de usuario: #{resource.tipo}"
-        if resource.tipo == "Admin"
+          
+        if resource.tipo.downcase == "admin"
           administrador_dashboard_path
-        elsif resource.tipo == "Propietario"
+        elsif resource.tipo.downcase. == "Propietario"
           propi_dashboard_path
 
         else

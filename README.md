@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+para cargar los datos por defecto que ya se tiene se pone 
+rails db:seed

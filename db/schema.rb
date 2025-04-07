@@ -64,9 +64,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_15_161627) do
   create_table "polideportivos", force: :cascade do |t|
     t.string "nombre"
     t.string "ubicacion"
+    t.bigint "user_id"
     t.string "contacto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_polideportivos_on_user_id"
   end
 
   create_table "propietarios", force: :cascade do |t|
@@ -110,6 +112,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_15_161627) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "canchas", "polideportivos"
+  add_foreign_key "polideportivos", "users"
   add_foreign_key "propietarios", "polideportivos", column: "polideportivos_id"
   add_foreign_key "reservas", "canchas", on_delete: :cascade
 end

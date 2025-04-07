@@ -16,6 +16,7 @@ module Administrador
     # POST /administrador/propietarios
     def create
       @propietario = Propietario.new(propietario_params)
+      
       if @propietario.save
         redirect_to administrador_propietarios_path, notice: 'Propietario creado exitosamente.'
       else

@@ -16,10 +16,15 @@ module Administrador
     # POST /administrador/polideportivos
     def create
       @polideportivo = Polideportivo.new(polideportivo_params)
+      @polideportivo.user = current_user
+
       if @polideportivo.save
+
         redirect_to administrador_polideportivos_path, notice: 'Polideportivo creado exitosamente.'
       else
-        render :new
+        render :new, notice:'Hubo un error en crear el polideportivo '
+        puts @polideportivo.errors.full_messages
+
       end
     end
 
@@ -30,6 +35,7 @@ module Administrador
     # PATCH/PUT /administrador/polideportivos/:id
     def update
       if @polideportivo.update(polideportivo_params)
+
         redirect_to administrador_polideportivos_path, notice: 'Polideportivo actualizado exitosamente.'
       else
         render :edit

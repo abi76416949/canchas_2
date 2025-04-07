@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
 
-   #NO TOCAR DE ARRIBA
+#NO TOCAR DE ARRIBA
 namespace :administrador do
   get 'dashboard', to: 'dashboards#index', as: :dashboard
 end

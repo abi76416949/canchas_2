@@ -16,7 +16,7 @@ module Administrador
     
 
     def authorize_admin
-      redirect_to root_path, alert: "No tienes acceso a esta sección" unless current_user&.tipo == "Admin"
+      redirect_to root_path, alert: "No tienes acceso a esta sección" unless current_user&.tipo == "admin"
     end
   end
 end

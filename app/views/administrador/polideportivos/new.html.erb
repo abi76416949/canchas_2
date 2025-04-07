@@ -1,6 +1,7 @@
-<h1>Nuevo Polideportivo</h1>
+<h1>Nuevo Polideportivoddd</h1>
 
 <%= form_with model: [:administrador, @polideportivo], local: true do |f| %>
+
   <div class="form-group">
     <%= f.label :nombre, "Nombre" %>
     <%= f.text_field :nombre, class: "form-control" %>
@@ -25,3 +26,14 @@
     <%= f.submit 'Crear Polideportivo', class: 'btn btn-primary' %>
   </div>
 <% end %>
+<% if @polideportivo.errors.any? %>
+  <div class="errores">
+    <h4>Errores:</h4>
+    <ul>
+      <% @polideportivo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
